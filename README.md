@@ -1,2 +1,2 @@
-# je-drawing-board
+# drawing-board
 绘图工具
