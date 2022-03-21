@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+$tools-height: 80px;
+
+#drawing-board {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    #tools {
+        width: 100%;
+        height: $tools-height;
+        border-bottom: 1px solid #ccc;
+
+        display: flex;
+        align-items: center;
+
+        .tool-list {
+            display: flex;
+            .tool-item {
+                border: 1px solid rgba(0, 0, 0, 5);
+                padding: 8px;
+                margin: 8px;
+                cursor: pointer;
+                user-select: none;
+            }
+            .tool-item:hover, .tool-item:active, .tool-item-active {
+                background-color: cornflowerblue;
+            }
+        }
+    }
+
+    canvas {
+        flex: auto;
+        width: 100%;
+    }
+}
