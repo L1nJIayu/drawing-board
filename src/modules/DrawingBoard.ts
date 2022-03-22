@@ -20,8 +20,7 @@ class DrawingBoard {
         this.canvasDOM = document.querySelector('canvas')!
         this.ctx = this.canvasDOM.getContext('2d')!
 
-        this.canvasDOM.width = window.innerWidth
-        this.canvasDOM.height = window.innerHeight - 80
+        this.setCanvasSize()
 
         this.toolBar.init()
     }
@@ -53,7 +52,7 @@ class DrawingBoard {
                         this.drawRect(e)
                         break
                 }
-                
+
             }
         })
 
@@ -70,7 +69,15 @@ class DrawingBoard {
         })
 
 
+        window.addEventListener('resize', () => {
+            this.setCanvasSize()
+        })
 
+
+    }
+    setCanvasSize() {
+        this.canvasDOM.width = window.innerWidth - (24 * 2)
+        this.canvasDOM.height = window.innerHeight - (80 + 24 * 2)
     }
 
     // 更新画板
