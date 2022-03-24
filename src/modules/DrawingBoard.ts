@@ -16,6 +16,7 @@ class DrawingBoard {
     toolBar: ToolBar = new ToolBar()
 
 
+
     constructor() {
         this.canvasDOM = document.querySelector('canvas')!
         this.ctx = this.canvasDOM.getContext('2d')!
@@ -23,10 +24,23 @@ class DrawingBoard {
         this.setCanvasSize()
 
         this.toolBar.init()
+
     }
 
     init() {
 
+        this.setListenerEvent()
+
+    }
+    setCanvasSize() {
+        this.canvasDOM.width = window.innerWidth - (24 * 2)
+        this.canvasDOM.height = window.innerHeight - (80 + 24 * 2)
+        
+        let editor = document.querySelector('#editor')
+        console.log([editor],editor?.getClientRects())
+    }
+
+    setListenerEvent() {
         this.canvasDOM.addEventListener('mousedown', e => {
             console.log('开始画画')
 
@@ -43,8 +57,9 @@ class DrawingBoard {
 
         this.canvasDOM.addEventListener('mousemove', e => {
             if(this.isDrawing) {
-                
-                switch(this.toolBar.currShapeType) {
+                console.log(this.toolBar.currShape.type)
+                this.ctx.strokeStyle = this.toolBar.currColor
+                switch(this.toolBar.currShape.type) {
                     case ShapeType.LINE:
                         this.drawLine(e)
                         break
@@ -73,11 +88,6 @@ class DrawingBoard {
             this.setCanvasSize()
         })
 
-
-    }
-    setCanvasSize() {
-        this.canvasDOM.width = window.innerWidth - (24 * 2)
-        this.canvasDOM.height = window.innerHeight - (80 + 24 * 2)
     }
 
     // 更新画板

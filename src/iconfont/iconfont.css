@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3268744 */
+  src: url('iconfont.woff2?t=1648040295107') format('woff2'),
+       url('iconfont.woff?t=1648040295107') format('woff'),
+       url('iconfont.ttf?t=1648040295107') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dot:before {
+  content: "\ec1e";
+}
+
+.icon-text:before {
+  content: "\eb99";
+}
+
+.icon-circle:before {
+  content: "\eb9a";
+}
+
+.icon-triangle:before {
+  content: "\eb9b";
+}
+
+.icon-star:before {
+  content: "\eb9c";
+}
+
+.icon-save:before {
+  content: "\ec09";
+}
+
+.icon-next:before {
+  content: "\ec0a";
+}
+
+.icon-prev:before {
+  content: "\ec0b";
+}
+
+.icon-png:before {
+  content: "\ec18";
+}
+
+.icon-more:before {
+  content: "\ec1c";
+}
+
+.icon-line:before {
+  content: "\ec1f";
+}
+
+.icon-image:before {
+  content: "\ec7f";
+}
+
+.icon-text-2:before {
+  content: "\ec85";
+}
+
+.icon-rect:before {
+  content: "\eb97";
+}
+

@@ -7,7 +7,7 @@ html, body {
     height: 100vh;
 }
 
-$tools-height: 80px;
+$tools-height: 130px;
 
 #drawing-board {
     width: 100%;
@@ -16,29 +16,128 @@ $tools-height: 80px;
     display: flex;
     flex-flow: column nowrap;
 
-    #tools {
+    /* 工具栏 */
+    #tool-bar {
         width: 100%;
-        height: $tools-height;
+        min-height: $tools-height;
         border-bottom: 1px solid #ccc;
 
         display: flex;
-        align-items: center;
+        justify-content: space-between;
 
-        .tool-list {
+        /* 工具列表 */
+        #tool-list {
             display: flex;
             .tool-item {
-                border: 1px solid rgba(0, 0, 0, 5);
-                padding: 8px;
-                margin: 8px;
-                cursor: pointer;
-                user-select: none;
+                min-width: 100px;
+                border-right: 1px solid #ccc;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+
+                .tool-item-content {
+                    flex: auto;
+                    
+                }
+                .tool-item-label {
+                    flex-basis: 24px;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, .5);
+                    text-align: center;
+                }
             }
-            .tool-item:hover, .tool-item:active, .tool-item-active {
-                background-color: cornflowerblue;
+            /* 形状 */
+            #shape {
+                .shape-list {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-flow: row wrap;
+                    width: 220px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin: 8px;
+                    height: 90px;
+                    overflow: auto;
+                    box-sizing: border-box;
+                    & > span {
+                        font-size: 24px;
+                        margin: 8px;
+                        cursor: pointer;
+                        border: 1px solid transparent;
+                        border-radius: 5px;
+                    }
+                    & > span:hover, .shape-active {
+                        border-color: #ccc;
+                    }
+                }
+            }
+            /* 大小 */
+            #size {
+                .dot-list {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-flow: row wrap;
+                    width: 130px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin: 8px;
+                    height: 90px;
+                    overflow: auto;
+                    box-sizing: border-box;
+                    & > span {
+                        font-size: 24px;
+                        width: 24px;
+                        height: 26px;
+                        margin: 8px;
+                        cursor: pointer;
+                        border: 1px solid transparent;
+                        border-radius: 5px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    & > span:hover, .dot-active {
+                        border-color: #ccc;
+                    }
+
+                    & > span:nth-child(1) { font-size: 12px; }
+                    & > span:nth-child(2) { font-size: 20px; }
+                    & > span:nth-child(3) { font-size: 30px; }
+                    & > span:nth-child(4) { font-size: 40px; }
+                    & > span:nth-child(5) { font-size: 50px; }
+                    & > span:nth-child(6) { font-size: 60px; }
+                }
+            }
+            /* 颜色 */
+            #color {
+                .tool-item-content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            // .tool-item {
+            //     border: 1px solid rgba(0, 0, 0, 5);
+            //     padding: 8px;
+            //     margin: 8px;
+            //     cursor: pointer;
+            //     user-select: none;
+            // }
+            // .tool-item:hover, .tool-item:active, .tool-item-active {
+            //     background-color: cornflowerblue;
+            // }
+        }
+        
+        /* 操作 */
+        #action {
+            .action-item {
+
             }
         }
     }
 
+    /* 编辑区 */
     #editor {
         flex: auto;
         // width: 100%;

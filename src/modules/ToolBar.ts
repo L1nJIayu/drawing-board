@@ -1,36 +1,28 @@
 
-import ShapeType from "../enum/ShapeType"
+import ShapeObject from "../interface/ShapeObject"
+import ToolShape from "./ToolShape"
+import ToolColor from "./ToolColor"
 class ToolBar {
     
-    tools: NodeListOf<Element>
-    currShapeType: ShapeType = ShapeType.NONE
+    sizeList: NodeListOf<Element>
+    toolShape: ToolShape
+    toolColor: ToolColor
+
 
     constructor() {
 
-        this.tools = document.querySelectorAll('.tool-item')
+        this.sizeList = document.querySelectorAll('#size .size-list > span')
+        this.toolShape = new ToolShape()
+        this.toolColor = new ToolColor()
+
     }
 
     init() {
 
-        document.querySelector('#line')?.addEventListener('click', (e) => {
-            this.toolActive(e as PointerEvent)
-            this.currShapeType = ShapeType.LINE
-        })
-
-        document.querySelector('#rect')?.addEventListener('click', (e) => {
-            this.toolActive(e as PointerEvent)
-            this.currShapeType = ShapeType.RECT
-
-        })
     }
 
-    toolActive(e: PointerEvent) {
-        this.tools.forEach(tool => {
-            tool.classList.remove('tool-item-active')
-        });
-
-        (e.target as Element).classList.add('tool-item-active')
-    }
+    get currShape(): ShapeObject { return this.toolShape.currShape }
+    get currColor(): string { return this.toolColor.currColor }
 
 }
 

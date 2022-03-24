@@ -8,10 +8,64 @@
 </head>
 <body>
     <div id="drawing-board">
-        <div id="tools">
-            <div class="tool-list">
-                <div class="tool-item" id="line">线段</div>
-                <div class="tool-item" id="rect">矩形</div>
+        <div id="tool-bar">
+
+            <div id="tool-list">
+                <div class="tool-item">
+                    <div class="tool-item-content"></div>
+                    <div class="tool-item-label">工具</div>
+                </div>
+                <!-- 形状 -->
+                <div class="tool-item" id="shape">
+                    <div class="tool-item-content">
+                        <div class="shape-list">
+                            <span id="shape-dot" class="iconfont icon-dot shape-active"></span>
+                            <span id="shape-line" class="iconfont icon-line"></span>
+                            <span id="shape-rect" class="iconfont icon-rect"></span>
+                            <span id="shape-circle" class="iconfont icon-circle"></span>
+                            <span id="shape-triangle" class="iconfont icon-triangle"></span>
+                            <span id="shape-star" class="iconfont icon-star"></span>
+                        </div>
+                    </div>
+                    <div class="tool-item-label">形状</div>
+                </div>
+                <!-- 大小 -->
+                <div class="tool-item" id="size">
+                    <div class="tool-item-content">
+                        <div class="dot-list">
+                            <span class="iconfont icon-dot"></span>
+                            <span class="iconfont icon-dot"></span>
+                            <span class="iconfont icon-dot"></span>
+                            <span class="iconfont icon-dot"></span>
+                            <span class="iconfont icon-dot"></span>
+                            <span class="iconfont icon-dot"></span>
+                        </div>
+                    </div>
+                    <div class="tool-item-label">大小</div>
+                </div>
+                <!-- 颜色 -->
+                <div class="tool-item" id="color">
+                    <div class="tool-item-content">
+                        <input type="color">
+                    </div>
+                    <div class="tool-item-label">颜色</div>
+                </div>
+                <!-- <div class="tool-item" id="line">线段</div> -->
+                <!-- <div class="tool-item" id="rect">矩形</div> -->
+            </div>
+            <div id="action">
+                <div class="action-item">
+                    <div class="label">撤回</div>
+                </div>
+                <div class="action-item">
+                    <div class="label">恢复</div>
+                </div>
+                <div class="action-item">
+                    <div class="label">保存</div>
+                </div>
+                <div class="action-item">
+                    <div class="label">导入</div>
+                </div>
             </div>
         </div>
         <div id="editor">

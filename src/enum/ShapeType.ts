@@ -1,7 +1,11 @@
 enum ShapeType {
-    RECT,
+    NONE,
+    DOT,
     LINE,
-    NONE
+    RECT,
+    CIRCLE,
+    TRIANGLE,
+    STAR
 }
 
 export default ShapeType
