@@ -73,7 +73,7 @@ $tools-height: 130px;
             }
             /* 大小 */
             #size {
-                .dot-list {
+                .size-list {
                     display: flex;
                     align-items: flex-start;
                     flex-flow: row wrap;
@@ -97,7 +97,7 @@ $tools-height: 130px;
                         justify-content: center;
                         align-items: center;
                     }
-                    & > span:hover, .dot-active {
+                    & > span:hover, .size-active {
                         border-color: #ccc;
                     }
 
@@ -117,22 +117,51 @@ $tools-height: 130px;
                     align-items: center;
                 }
             }
-            // .tool-item {
-            //     border: 1px solid rgba(0, 0, 0, 5);
-            //     padding: 8px;
-            //     margin: 8px;
-            //     cursor: pointer;
-            //     user-select: none;
-            // }
-            // .tool-item:hover, .tool-item:active, .tool-item-active {
-            //     background-color: cornflowerblue;
-            // }
         }
         
         /* 操作 */
         #action {
+            display: flex;
+            align-items: center;
             .action-item {
+                margin: 0 16px;
 
+                .icon-prev, .icon-next {
+                    cursor: pointer;
+                    padding: 8px;
+                    border: 1px solid transparent;
+                    border-radius: 5px;
+                }
+
+                .icon-prev:hover, .icon-next:hover {
+                    border-color: #ccc;
+                }
+
+                // 按钮样式
+                button, .btn {
+
+                    position: relative;
+                    display: inline-block;
+                    background: #ccc;
+                    border: 1px solid #333;
+                    padding: 4px 20px;
+                    overflow: hidden;
+                    text-decoration: none;
+                    text-indent: 0;
+                    line-height: 20px;
+                    border-radius: 20px;
+                    color: #333;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+                // 隐藏input[type=file]
+                #importImage {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    opacity: 0;
+                }
             }
         }
     }
@@ -140,7 +169,6 @@ $tools-height: 130px;
     /* 编辑区 */
     #editor {
         flex: auto;
-        // width: 100%;
         padding: 24px;
         background-color: rgba(0, 0, 0, .1);
 
@@ -150,3 +178,4 @@ $tools-height: 130px;
     }
 
 }
+

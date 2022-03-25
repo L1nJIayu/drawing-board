@@ -32,13 +32,13 @@
                 <!-- 大小 -->
                 <div class="tool-item" id="size">
                     <div class="tool-item-content">
-                        <div class="dot-list">
-                            <span class="iconfont icon-dot"></span>
-                            <span class="iconfont icon-dot"></span>
-                            <span class="iconfont icon-dot"></span>
-                            <span class="iconfont icon-dot"></span>
-                            <span class="iconfont icon-dot"></span>
-                            <span class="iconfont icon-dot"></span>
+                        <div class="size-list">
+                            <span class="iconfont icon-dot size-active" id="size-1"></span>
+                            <span class="iconfont icon-dot" id="size-2"></span>
+                            <span class="iconfont icon-dot" id="size-4"></span>
+                            <span class="iconfont icon-dot" id="size-6"></span>
+                            <span class="iconfont icon-dot" id="size-8"></span>
+                            <span class="iconfont icon-dot" id="size-10"></span>
                         </div>
                     </div>
                     <div class="tool-item-label">大小</div>
@@ -50,21 +50,35 @@
                     </div>
                     <div class="tool-item-label">颜色</div>
                 </div>
-                <!-- <div class="tool-item" id="line">线段</div> -->
-                <!-- <div class="tool-item" id="rect">矩形</div> -->
             </div>
             <div id="action">
                 <div class="action-item">
-                    <div class="label">撤回</div>
+                    <div class="label">
+                        <span id="withdraw" class="iconfont icon-prev" title="撤销"></span>
+                    </div>
                 </div>
                 <div class="action-item">
-                    <div class="label">恢复</div>
+                    <div class="label">
+                        <span id="recovery" class="iconfont icon-next" title="恢复"></span>
+                    </div>
                 </div>
                 <div class="action-item">
-                    <div class="label">保存</div>
+                    <div class="label">
+                        <button id="clear">清空</button>
+                    </div>
                 </div>
                 <div class="action-item">
-                    <div class="label">导入</div>
+                    <div class="label">
+                        <button id="download">保存/下载</button>
+                    </div>
+                </div>
+                <div class="action-item">
+                    <div class="label">
+                        <a href="javascript:;" class="btn">
+                            导入图片 
+                            <input id="importImage" type="file" accept="image/png, image/jpeg">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
